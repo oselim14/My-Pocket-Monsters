@@ -1,0 +1,13 @@
+<%- include('./partials/header') %>
+
+<h2 id="homepage">My Pocket Monsters</h2>
+<h3>Select Starter Pokemon:</h3>
+    <form id= "starter-pokemon" action="/pokemon" method="POST">
+        <select name="starter">
+            <option value="Starter 1">Starter 1</option>
+            <option value="Starter 2">Starter 2</option>
+            <option value="Starter 3">Starter 3</option>
+        </select>
+        <input type="submit" value="Select Starter">
+    </form>
+<%- include('./partials/footer') %>
