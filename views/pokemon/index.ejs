@@ -1,4 +1,28 @@
 <%- include('../partials/header') %>
 
+<table id="list">
+  <thead>
+    <tr>
+      <th>Pokemon</th>
+      <th>Type</th>
+      <th>Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% pokemon.forEach(function(p) { %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.type %></td>
+        <td><%= p.level %></td>
+        <td><a href="/pokemon/<%= p._id %>">DETAILS</a></td>
+        <td>
+            <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
 <%- include('../partials/footer') %>

@@ -1,13 +1,23 @@
 <%- include('./partials/header') %>
 
 <h2 id="homepage">My Pocket Monsters</h2>
-<h3>Select Starter Pokemon:</h3>
+<h3 id="homepageSelect">Select &nbsp;&nbsp;  Starter  &nbsp;&nbsp; Pokemon:</h3>
+<div id="starterSelect">
+    <div id="pokeimages">
+        <img src="https://i.imgur.com/sPImiuy.png" class="pokeball">
+        <img src="https://i.imgur.com/sPImiuy.png" class="pokeball">
+        <img src="https://i.imgur.com/sPImiuy.png" class="pokeball">
+    </div>
     <form id= "starter-pokemon" action="/pokemon" method="POST">
-        <select name="starter">
-            <option value="Starter 1">Starter 1</option>
-            <option value="Starter 2">Starter 2</option>
-            <option value="Starter 3">Starter 3</option>
-        </select>
-        <input type="submit" value="Select Starter">
+        <div id="pokemonselect">
+            <select name="name">
+                <option value="ditto">Starter 1</option>
+                <option value="Starter 2">Starter 2</option>
+                <option value="Starter 3">Starter 3</option>
+            </select>
+            <input type="submit" value="Select Starter">
+        </div>
     </form>
+</div>
+<h3 id="prompt">Choose Wisely <br> ...</h3>
 <%- include('./partials/footer') %>

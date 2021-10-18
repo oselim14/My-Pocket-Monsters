@@ -1,6 +1,13 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   padding: 50px;
   font-family: 'Press Start 2P', cursive;
+  color: rgb(254	194	11);
+  background-color: rgb(233,	33,	34, 0.8);
+  text-shadow: 2px 2px 0 rgb(39	78	157);
 }
 
 a {
@@ -8,14 +15,15 @@ a {
   text-decoration: none;
 }
 
-nav {
+.nav {
   font-size: 20px;
-  
-
+  display: inline-flex;
+  justify-content: center;
 }
 
 a:hover{
-  color: blue;
+  color: rgb(254	194	11);
+  text-shadow: 5px 5px 0 rgb(39	78	157);
 }
 
 .login {
@@ -23,8 +31,92 @@ a:hover{
   justify-content: center;
   align-items: center;
   height: 34px;
+  padding-bottom: 12px;
 }
 
 .login img {
   height: 30px;
+}
+ 
+#starterSelect {
+  background-color: white;
+  border: 20px solid grey;
+  border-radius: 12px;
+  padding: 25px 0;
+}
+
+.pokeball {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+  flex-direction: row;
+}
+
+#pokeimages{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 130px;
+  flex-direction: row;
+  margin-top: 25px;
+}
+
+#pokemonselect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0 25px 0;
+}
+
+#pokemonselect > select {
+  font-size: 30px;
+  background-color: lightgrey;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 0 50px;
+  letter-spacing: 5px;
+}
+
+#pokemonselect > input[type="submit"] {
+  font-size: 30px;
+  background-color: lightgrey;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 40px;
+}
+
+#homepage{
+  text-align: center;
+  font-size: 45px;
+  text-shadow: 5px 5px 0 rgb(39	78	157);
+}
+
+#homepageSelect{
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 5px;
+}
+
+#prompt {
+  background-color: white;
+  border: 20px solid grey;
+  border-radius: 12px;
+  padding: 25px 25px;
+  line-height: 60px;
+  color: black;
+  text-shadow: none;
+}
+
+tr > th{
+  color: rgb(39	78	157);
+  font-size: 35px;
+  text-shadow: 2px 2px rgb(254	194	11);
+  text-align: center;
+  margin: 125px;
+  padding: 50px 50px 25px
+}
+
+tbody {
+  text-align: center;
+  justify-content: center;
 }

@@ -1,4 +1,12 @@
 <%- include('../partials/header') %>
 
+<h3>My Team:</h3>
+    <div>Starter Pokemon:</div>
+    <div><%= pokemon.name %></div>
+    <div><%= pokemon.type %></div>
+    <div><%= pokemon.level %></div>
+
+
+   <a href="/pokemon/<%=pokemon._id%>/edit">EDIT STARTER</a>
 
 <%- include('../partials/footer') %>

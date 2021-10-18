@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+<form action="/pokemon" method="POST">
+    <label for="starter">Edit Pokemon:
+        <select name="starter-pokemon">
+            <option <%= pokemon.name === "Starter 1" ? "selected":"" %> value="Starter 1">Starter 1</option>
+            <option <%= pokemon.name === "Starter 2" ? "selected":"" %> value="Starter 2">Starter 2</option>
+            <option <%= pokemon.name === "Starter 3" ? "selected":"" %> value="Starter 3">Starter 3</option>
+        </select>
+    </label>
+    <button class="submit-button" type="submit">Accept Changes</button>
+</form>
+<%- include('../partials/footer') %>
