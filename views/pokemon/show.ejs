@@ -1,12 +1,24 @@
 <%- include('../partials/header') %>
 
 <h3>Pokemon Details:</h3>
-    <div>Starter Pokemon:</div>
-    <div><%= pokemon.name %></div>
-    <div><%= pokemon.type %></div>
-    <div><%= pokemon.level %></div>
+<div>Starter Pokemon:</div>
+<div><%= pokemon.name %></div>
+<div><%= pokemon.type %></div>
+<div><%= pokemon.level %></div>
 
 
-   <a href="/pokemon/<%=pokemon._id%>/edit">EDIT STARTER</a>
+<a href="/pokemon/<%=pokemon._id%>/edit">EDIT STARTER</a>
+
+<a href="/pokemon/<%=pokemon._id%>/moves/new">MOVES</a>
+<ul>
+<% pokemon.moves.forEach(function(m){ %>
+    <li>
+        <form action="/moves/<%= m._id%>?_method=DELETE" method="POST">
+        <button type="submit">X</button>
+        </form>
+        <%= m.move %>
+    </li>
+<%  }) %>
+</ul>
 
 <%- include('../partials/footer') %>

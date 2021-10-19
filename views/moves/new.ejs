@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+<h4><%= pokemon.name %></h4>
+<h4><%= pokemon.level %></h4>
+<form id="new-pokemon" action="/pokemon/<%=pokemon._id%>/moves" method="POST">
+    <label>Move:</label>
+    <select name="move">
+        <% moves.forEach(function(m) { %>
+            <option value="<%= m %>"><%= m %></option>
+        <% }) %>    
+    </select>
+    <input type="submit" value="Teach Move!">
+</form>
+
+<%- include('../partials/footer') %>

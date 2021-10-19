@@ -1,5 +1,11 @@
 <%- include('../partials/header') %>
-
+<h1>Enter Name of Pokemon to Add:</h1>
+<form id="new-pokemon" action="/pokemon" method="POST">
+    <label>Name</label>
+    <input type="text" name="name">
+    <input type="submit" value="Add Pokemon">
+</form>
+<h3><%= message %> </h3>
 
 
 <%- include('../partials/footer') %>
