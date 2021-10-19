@@ -1,11 +1,13 @@
 <%- include('../partials/header') %>
 
+<h2>My Team:</h2>
 <table id="list">
   <thead>
     <tr>
       <th>Pokemon</th>
       <th>Type</th>
       <th>Level</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +16,7 @@
         <td><%= p.name %></td>
         <td><%= p.type %></td>
         <td><%= p.level %></td>
+        <td><img src=<%= p.sprite %>></td>
         <td><a href="/pokemon/<%= p._id %>">DETAILS</a></td>
         <td>
             <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">

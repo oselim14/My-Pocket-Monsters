@@ -1,6 +1,7 @@
 const Pokemon = require('../models/pokemon');
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 const rootURL = 'https://pokeapi.co/api/v2';
+const axios = require('axios');
 
 
 module.exports = {
@@ -13,27 +14,23 @@ module.exports = {
     delete: deletePoke,
 }
 
-function create(req, res) {
+async function create(req, res) {
     const name = req.body.name;
-    if (!name) return res.render('index');
-    const pokemon = fetch(`${rootURL}/pokemon/${name}`)
-        .then(res => res.json())
-        .then(poke => {
-            pokeData = poke
-            return fetch(pokeData.type);
-        }).then(res => res.json())
-        .then(sprites =>{
-            pokeData.sprites = sprites;
-            res.render('index', {pokeData})
-        })
-    // const pokemon = new Pokemon(req.body);
-    // pokemon.save(function(err) {
-    //     if (err) return res.render('pokemon/new');
-    //     res.redirect(`/pokemon/new`);
-    // }
-    console.log(pokemon)
-  res.render('pokemon/new')
-}
+    if (!name) return res.render("pokemon/index");
+    const pokemon = await axios.get(`${rootURL}/pokemon/${name}`)
+    req.body.type = pokemon.data.types[0].type.name;
+    req.body.sprite = pokemon.data.sprites.front_default;
+
+    const poke1 = new Pokemon(req.body);
+    poke1.save(function(err) {
+        if (err) return res.render('home');
+        req.user.starterPokemon = poke1;
+        req.user.save(function(err){
+            console.log(req.user);
+            res.redirect(`/pokemon`);
+        });
+    });
+   } 
 
 function newPoke(req, res) {
     res.render('pokemon/new');
@@ -63,8 +60,13 @@ function edit(req, res) {
     });
 }
 
-function update(req, res) {
-    Pokemon.findOneAndUpdate({_id: req.params.id}, function(err, pokemon){
+async function update(req, res) {
+    const name = req.body.name;
+    if (!name) return res.render("pokemon/index");
+    const pokeData = await axios.get(`${rootURL}/pokemon/${name}`)
+    req.body.type = pokeData.data.types[0].type.name;
+    req.body.sprite = pokeData.data.sprites.front_default;
+    Pokemon.findOneAndUpdate(req.params.id, req.body, function(err, pokemon){
         if (err) {
             res.render("pokemon/edit", { pokemon, title: "Edit Starter" });
           }

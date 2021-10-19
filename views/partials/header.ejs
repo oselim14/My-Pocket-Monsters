@@ -15,7 +15,7 @@
         <a href="/pokemon">POKEMON</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <a href="/pokemon/show">DETAILS</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <% if (user) { %>
-            <a href="/logout">LOG OUT</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/logout">Welcome <%=user.name%></a>&nbsp;&nbsp;&nbsp;&nbsp;
         <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>

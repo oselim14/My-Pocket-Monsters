@@ -9,6 +9,7 @@ const pokeSchema = new Schema ({
     type: String,
     // moves: [movesSchema],
     level: Number,
+    sprite: String,
 });
 
 module.exports = mongoose.model('Pokemon', pokeSchema);

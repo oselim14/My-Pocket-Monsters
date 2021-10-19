@@ -120,3 +120,9 @@ tbody {
   text-align: center;
   justify-content: center;
 }
+
+#already-made {
+  text-align: center;
+  color: black;
+  text-shadow: none;
+}

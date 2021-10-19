@@ -8,16 +8,21 @@
         <img src="https://i.imgur.com/sPImiuy.png" class="pokeball">
         <img src="https://i.imgur.com/sPImiuy.png" class="pokeball">
     </div>
+    <% if (user && user.starterPokemon) { %>
     <form id= "starter-pokemon" action="/pokemon" method="POST">
         <div id="pokemonselect">
             <select name="name">
-                <option value="ditto">Starter 1</option>
-                <option value="Starter 2">Starter 2</option>
-                <option value="Starter 3">Starter 3</option>
+                <option value="ditto">Ditto</option>
+                <option value="squirtle">Squirtle</option>
+                <option value="bulbasaur">Bulbasaur</option>
             </select>
+            <input type="hidden" name="level" value="5">
             <input type="submit" value="Select Starter">
         </div>
     </form>
+    <% } else { %>
+        <h3 id="already-made">You've already selected your starter pokemon!</h3>
+    <% } %>    
 </div>
 <h3 id="prompt">Choose Wisely <br> ...</h3>
 <%- include('./partials/footer') %>

@@ -8,9 +8,15 @@ const userSchema = new Schema({
         required: true,
     },
     email: String,
-    avatar: String
+    avatar: String,
+    starterPokemon: {
+        type: Schema.Types.ObjectId,
+        ref: 'Pokemon',
+    }
 }, {
     timestamps: true,
 });
+
+
 
 module.exports = mongoose.model('User', userSchema);
