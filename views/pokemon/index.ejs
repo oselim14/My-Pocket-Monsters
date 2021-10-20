@@ -1,32 +1,38 @@
 <%- include('../partials/header') %>
 
-<h2>My Team:</h2>
-<table id="list">
-  <thead>
-    <tr>
-      <th>Pokemon</th>
-      <th>Type</th>
-      <th>Level</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% pokemon.forEach(function(p) { %>
-      <tr>
-        <td><%= p.name %></td>
-        <td><%= p.type %></td>
-        <td><%= p.level %></td>
-        <td><img src=<%= p.sprite %>></td>
-        <td><a href="/pokemon/<%= p._id %>">DETAILS</a></td>
-        <td>
-            <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-            </form>
-        </td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
+    <h2>My Team:</h2>
+    <table id="list">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Pokemon</th>
+                <th>Type</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody id="cards">
+            <% pokemon.forEach(function(p) { %>
+                <tr>
+                    <td><img src=<%=p.sprite %>></td>
+                    <td>
+                        <%= p.name %>
+                    </td>
+                    <td>
+                        <%= p.type %>
+                    </td>
+                    <td>
+                        <%= p.level %>
+                    </td>
+                    <td><a href="/pokemon/<%= p._id %>">DETAILS</a></td>
+                    <td>
+                        <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
     <a href="/pokemon/new">Build Your Team!</a>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

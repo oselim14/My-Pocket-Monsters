@@ -71,15 +71,10 @@ function edit(req, res) {
 }
 
 async function update(req, res) {
-    const name = req.body.name;
-    if (!name) return res.render("pokemon/index");
-    const pokeData = await axios.get(`${rootURL}/pokemon/${name}`)
-    req.body.type = pokeData.data.types[0].type.name;
-    req.body.sprite = pokeData.data.sprites.front_default;
-    Pokemon.findOneAndUpdate({id: req.params.id, user: req.user._id}, req.body, {new: true}, function (err, pokemon) {
+    Pokemon.findOneAndUpdate({_id: req.params.id, user: req.user._id}, req.body, {new: true}, function (err, pokemon) {
         console.log(req.params.id, req.body);
         if (err || !pokemon) {
-            return res.redirect("/pokemon/edit");
+            return res.redirect(`/pokemon/${pokemon._id}/edit`);
         }
         res.redirect(`/pokemon/${pokemon._id}`);
     })

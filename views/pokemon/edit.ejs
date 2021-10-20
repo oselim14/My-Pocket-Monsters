@@ -5,9 +5,7 @@
 <form action="/pokemon/<%=pokemon._id%>?_method=PUT" method="POST">
     <label for="starter">Edit Starter:
         <select name="name">
-            <option value="ditto">Ditto</option>
-            <option value="squirtle">Squirtle</option>
-            <option value="bulbasaur">Bulbasaur</option>
+            <option value="<%= pokemon.name %>"><%= pokemon.name %></option>
         </select>
         <input name="level" type="number" value="<%= pokemon.level %>">
     </label>

@@ -12,7 +12,6 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var pokeRouter = require('./routes/pokemon');
 var movesRouter = require('./routes/moves');
 
@@ -45,7 +44,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 const isLoggedIn = require('./config/auth');
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/pokemon', pokeRouter);
 app.use('/', isLoggedIn, movesRouter);
 

@@ -1,7 +1,5 @@
 const Pokemon = require('../models/pokemon');
 const axios = require('axios');
-const { map } = require('../server');
-const { move } = require('../routes');
 const rootURL = 'https://pokeapi.co/api/v2';
 
 module.exports = {
