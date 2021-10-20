@@ -5,15 +5,17 @@
         <thead>
             <tr>
                 <th></th>
+                <th>Nickname</th>
                 <th>Pokemon</th>
                 <th>Type</th>
                 <th>Level</th>
             </tr>
         </thead>
-        <tbody id="cards">
+        <tbody> 
             <% pokemon.forEach(function(p) { %>
                 <tr>
                     <td><img src=<%=p.sprite %>></td>
+                    <td><%= p.nickname %></td>
                     <td>
                         <%= p.name %>
                     </td>

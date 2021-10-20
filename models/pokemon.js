@@ -14,6 +14,7 @@ const pokeSchema = new Schema ({
         type: String,
         required: true,
     },
+    nickname: String,
     apiId: String,
     type: String,
     level: Number,
