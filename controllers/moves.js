@@ -1,12 +1,14 @@
 const Pokemon = require('../models/pokemon');
 const axios = require('axios');
 const { map } = require('../server');
+const { move } = require('../routes');
 const rootURL = 'https://pokeapi.co/api/v2';
 
 module.exports = {
     create,
     new: newMove,
     addToPokemon,
+    delete: deleteMove,
 };
 
 function addToPokemon(req, res) {
@@ -33,3 +35,11 @@ async function newMove(req, res) {
     res.render('moves/new', { pokemon, moves });
 }
 
+async function deleteMove(req, res) {
+    const pokemon = await Pokemon.findOne({'moves._id': req.params.id});
+    const move = pokemon.moves.id(req.params.id);
+    if (!move.user === req.user.id) return res.redirect(`/pokemon/${pokemon._id}`);
+    move.remove();
+    await pokemon.save();
+    res.redirect(`/pokemon/${pokemon._id}`)
+}

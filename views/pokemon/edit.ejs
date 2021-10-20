@@ -1,4 +1,7 @@
 <%- include('../partials/header') %>
+
+<h3 name="name"> <%= pokemon.name %> </h3>
+
 <form action="/pokemon/<%=pokemon._id%>?_method=PUT" method="POST">
     <label for="starter">Edit Starter:
         <select name="name">

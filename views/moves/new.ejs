@@ -2,6 +2,8 @@
 
 <h4><%= pokemon.name %></h4>
 <h4><%= pokemon.level %></h4>
+
+<% if (moves.length >= 1) { %>
 <form id="new-pokemon" action="/pokemon/<%=pokemon._id%>/moves" method="POST">
     <label>Move:</label>
     <select name="move">
@@ -11,5 +13,7 @@
     </select>
     <input type="submit" value="Teach Move!">
 </form>
-
+<% } else { %>
+    <h3>Your Pokemon knows all it's moves!</h3>
+<% } %>
 <%- include('../partials/footer') %>

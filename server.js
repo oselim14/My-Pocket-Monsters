@@ -42,10 +42,12 @@ app.use(function (req, res, next) {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+const isLoggedIn = require('./config/auth');
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/pokemon', pokeRouter);
-app.use('/', movesRouter);
+app.use('/', isLoggedIn, movesRouter);
 
 
 // catch 404 and forward to error handler
