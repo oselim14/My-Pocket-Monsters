@@ -19,16 +19,19 @@
                     </div>
                     <label class="typeID">Type: <span><%= p.type %></span></label><br/>
                     <% if (p.level !== undefined) { %>
-                    <label class="levelID">Level: <span><%= p.level %></span></label>
+                        <label class="levelID">Level: <span><%= p.level %></span></label>
                     <% } else { %>
-                    <label class="levelID">Level: <span>?</span></label>
+                        <label class="levelID">Level: <span>?</span></label>
                     <% } %>
                     </div>
                     <div id="buttons">
                     <a href="/pokemon/<%= p._id %>">DETAILS</a>
-                    <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
+                    <form id= "delete" action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
                         <button type="submit">X</button>
                     </form>
+                    <% if (p.onTeam === true) { %>
+                        <i style='font-size:24px' class='fas'>&#xf005;</i>
+                    <% } %>
                     </div>
                 </div>
             </div>

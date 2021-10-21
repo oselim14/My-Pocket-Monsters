@@ -71,8 +71,8 @@ function edit(req, res) {
 }
 
 async function update(req, res) {
+    req.body.onTeam = !!req.body.onTeam;
     Pokemon.findOneAndUpdate({_id: req.params.id, user: req.user._id}, req.body, {new: true}, function (err, pokemon) {
-        console.log(req.params.id, req.body);
         if (err || !pokemon) {
             return res.redirect(`/pokemon/${pokemon._id}/edit`);
         }

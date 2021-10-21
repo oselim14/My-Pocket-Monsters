@@ -1,23 +1,33 @@
 <%- include('../partials/header') %>
 
 <h3>Pokemon Details:</h3>
-<div>Starter Pokemon:</div>
+<div class="pokecardButtons">
+<div id="pokecard">
+<div class="pokecardName"><%= pokemon.name %></div>
+<div class="pokecardImg"><img src=<%=pokemon.sprite %>></div>
 <div><%= pokemon.nickname %></div>
-<div><%= pokemon.name %></div>
-<div><%= pokemon.type %></div>
-<div><%= pokemon.level %></div>
-
+<div class="pokecardType">Type: <span><%= pokemon.type %></span></div>
+<% if (pokemon.level !== undefined) { %>
+    <div class="pokecardLevel">Level: <span><%= pokemon.level %></span></div>
+<% } else { %>
+    <div class="pokecardLevel">Level: <span>?</span></div>
+<% } %>
+<div>On team: <%= pokemon.onTeam  ? 'Yes' : 'No' %></div>
+</div>
 
 <a href="/pokemon/<%=pokemon._id%>/edit">EDIT STARTER</a>
 
 <a href="/pokemon/<%=pokemon._id%>/moves/new">MOVES</a>
+</div>
 <ul>
 <% pokemon.moves.forEach(function(m){ %>
     <li>
-        <form action="/moves/<%= m._id%>?_method=DELETE" method="POST">
-        <button type="submit">X</button>
-        </form>
-        <%= m.move %>
+        <p>
+            <form action="/moves/<%= m._id%>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+            <%= m.move %>
+        </p>
     </li>
 <%  }) %>
 </ul>

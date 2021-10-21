@@ -19,7 +19,8 @@ const pokeSchema = new Schema ({
     type: String,
     level: Number,
     sprite: String,
-    moves: [moveSchema]
+    moves: [moveSchema],
+    onTeam: { type: Boolean, default: true},
 });
 
 module.exports = mongoose.model('Pokemon', pokeSchema);

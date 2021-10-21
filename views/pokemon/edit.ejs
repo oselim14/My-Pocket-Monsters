@@ -4,8 +4,15 @@
 
 <form action="/pokemon/<%=pokemon._id%>?_method=PUT" method="POST">
     <label for="starter">Edit Starter:
-        <input name="nickname" type="text">
-        <input name="level" type="number" value="<%= pokemon.level %>">
+        <label>Nickname:
+            <input name="nickname" type="text" value="<%= pokemon.nickname %>">
+        </label>
+        <label>Level:
+            <input name="level" type="number" value="<%= pokemon.level %>">
+        </label>
+        <label>On Team: 
+            <input name="onTeam" type="checkbox" default= "checked"> 
+        </label>
     </label>
     <button class="submit-button" type="submit">Accept Changes</button>
 </form>

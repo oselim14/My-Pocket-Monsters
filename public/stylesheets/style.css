@@ -13,6 +13,7 @@ body {
 a {
   color: black;
   text-decoration: none;
+  margin: 10px;
 }
 
 .nav {
@@ -177,7 +178,7 @@ div {
   text-shadow: 2px 2px 0 rgb(254	194	11);
 }
 
-.typeID {
+.typeID .pokecardLevel .levelID .pokecardType{
   color: #FCB80F;
   text-shadow: 2px 2px 0 rgb(39	78	157);
 }
@@ -191,12 +192,88 @@ div {
   color: #f4cf74;
   text-shadow: 2px 2px 0 rgb(39	78	157);
 }
-.levelID {
-  color: #FCB80F;
+
+.pokecardLevel > span{
+  color: #f4cf74;
+  text-shadow: 2px 2px 0 rgb(39	78	157);
+}
+.pokecardType > span{
+  color: #f4cf74;
   text-shadow: 2px 2px 0 rgb(39	78	157);
 }
 
 img {
   height: 150px;
   width: auto;
+}
+
+.fas {
+  margin: 15px;
+}
+
+#delete {
+  margin-top: 20px;
+}
+
+#delete > button {
+  color: black;
+  text-shadow: 2px 2px 0 #E5353D;
+  border: none;
+  background-color: rgba(213, 120, 120);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+}
+
+#delete > button:hover{
+  color: blue;
+  transform: scale(1.5);
+  transition: all 0.2s ease-in-out;
+}
+
+#pokecard {
+  width: 75vw;
+  max-width: 400px;
+  text-align: center;
+  border:5px solid #FCB80F;
+  border-radius: 10px;
+  line-height: 40px;
+  align-items: center;
+}
+
+.pokecardImg {
+  background-color: rgba(213, 120, 120);
+  width: 70vw;
+  max-width: 390px;
+  border-radius: 10px;
+  justify-items: center;
+  
+}
+
+.pokecardName {
+  text-align: left;
+  margin-left: 30px;
+}
+
+.pokecardButtons {
+  width: 75vw;
+  max-width: 400px;
+  text-align: center;
+  line-height: 40px;
+}
+
+form > button {
+  color: black;
+  text-shadow: 2px 2px 0 rgba(213, 120, 120); 
+  border: none;
+  background-color: transparent;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
