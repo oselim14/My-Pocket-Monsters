@@ -1,40 +1,39 @@
 <%- include('../partials/header') %>
 
-    <h2>My Team:</h2>
-    <table id="list">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Nickname</th>
-                <th>Pokemon</th>
-                <th>Type</th>
-                <th>Level</th>
-            </tr>
-        </thead>
-        <tbody> 
+<h2>My Team:</h2>
+    <div class="container">
             <% pokemon.forEach(function(p) { %>
-                <tr>
-                    <td><img src=<%=p.sprite %>></td>
-                    <td><%= p.nickname %></td>
-                    <td>
+                <div class="col">
+                <div class="card">
+                    <div class="left">
+                    <div><img src=<%=p.sprite %>></div>
+                    <% if (p.nickname !== undefined) { %>
+                    <div id="nickname">
+                        <%= p.nickname %>
+                    </div>
+                    <% } %>
+                    </div>
+                    <div class="right">
+                    <div id="pokeName">
                         <%= p.name %>
-                    </td>
-                    <td>
-                        <%= p.type %>
-                    </td>
-                    <td>
-                        <%= p.level %>
-                    </td>
-                    <td><a href="/pokemon/<%= p._id %>">DETAILS</a></td>
-                    <td>
-                        <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
-                        </form>
-                    </td>
-                </tr>
+                    </div>
+                    <label class="typeID">Type: <span><%= p.type %></span></label><br/>
+                    <% if (p.level !== undefined) { %>
+                    <label class="levelID">Level: <span><%= p.level %></span></label>
+                    <% } else { %>
+                    <label class="levelID">Level: <span>?</span></label>
+                    <% } %>
+                    </div>
+                    <div id="buttons">
+                    <a href="/pokemon/<%= p._id %>">DETAILS</a>
+                    <form action="/pokemon/<%=p._id%>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
                 <% }); %>
-        </tbody>
-    </table>
+    </div>
     <a href="/pokemon/new">Build Your Team!</a>
 
     <%- include('../partials/footer') %>

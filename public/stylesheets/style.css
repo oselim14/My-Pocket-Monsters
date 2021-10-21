@@ -105,11 +105,12 @@ a:hover{
   line-height: 60px;
   color: black;
   text-shadow: none;
+  margin-top: 25px;
 }
 
 tr > th{
   color: rgb(39	78	157);
-  font-size: 35px;
+  font-size: 25px;
   text-shadow: 2px 2px rgb(254	194	11);
   text-align: center;
   margin: 125px;
@@ -125,4 +126,77 @@ tbody {
   text-align: center;
   color: black;
   text-shadow: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 45vw);
+  justify-content: center;
+}
+
+div {
+  display: block;
+}
+
+
+.col {
+  margin: 2vmin;
+  background-color: rgba(213, 120, 120);
+  border: 5px solid lightgrey;
+  border-radius: 10px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.card {
+  padding: 1vmin;
+  grid-column:auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card .left{
+  float: left;
+}
+
+.card .right {
+  float: right;
+}
+
+#nickname{
+  font-size: 25px;
+  color: rgb(39	78	157);
+  text-shadow: 2px 2px 0 rgb(254	194	11);
+}
+
+#pokeName {
+  line-height: 60px;
+  font-size: 25px;
+  color: rgb(39	78	157);
+  text-shadow: 2px 2px 0 rgb(254	194	11);
+}
+
+.typeID {
+  color: #FCB80F;
+  text-shadow: 2px 2px 0 rgb(39	78	157);
+}
+
+.typeID > span {
+  color: #f4cf74;
+  text-shadow: 2px 2px 0 rgb(39	78	157);
+}
+
+.levelID > span{
+  color: #f4cf74;
+  text-shadow: 2px 2px 0 rgb(39	78	157);
+}
+.levelID {
+  color: #FCB80F;
+  text-shadow: 2px 2px 0 rgb(39	78	157);
+}
+
+img {
+  height: 150px;
+  width: auto;
 }
