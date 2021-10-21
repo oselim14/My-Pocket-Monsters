@@ -211,23 +211,14 @@ img {
   margin: 15px;
 }
 
-#delete {
-  margin-top: 20px;
-}
 
-#delete > button {
-  color: black;
-  text-shadow: 2px 2px 0 #E5353D;
-  border: none;
-  background-color: rgba(213, 120, 120);
-  font-family: 'Press Start 2P', cursive;
-  font-size: 18px;
-}
+
 
 #delete > button:hover{
   color: blue;
   transform: scale(1.5);
   transition: all 0.2s ease-in-out;
+  margin-right: none;
 }
 
 #pokecard {
@@ -268,12 +259,55 @@ form > button {
   background-color: transparent;
   font-family: 'Press Start 2P', cursive;
   font-size: 18px;
-  margin-right: 15px;
 }
+
+form >button:hover {
+  text-shadow: 2px 2px 0 rgba(213, 120, 120); 
+  border: none;
+  background-color: transparent;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  color: blue;
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+#delete > button {
+  color: black;
+  text-shadow: 2px 2px 0 #E5353D;
+  border: none;
+  background-color: transparent;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  margin-right: none;
+  margin: 20px 0px 10px 0px;
+}
+
 
 li {
   display: flex;
   flex-direction: row;
   align-items: center;
 
+}
+
+#buttons{
+  align-items: center;
+}
+
+#changes{
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 25px;
+}
+
+#changes:hover {
+  color: lightgrey;
+  background-color: black;
+  margin-top: 25px;
+}
+
+#editScreen {
+  line-height: 35px;
 }

@@ -3,17 +3,17 @@
 <h3 name="name"> EDIT <%= pokemon.name.toUpperCase() %> :</h3>
 
 <form action="/pokemon/<%=pokemon._id%>?_method=PUT" method="POST">
-    <label for="starter">Edit Starter:
-        <label>Nickname:
+    <label for="starter" id="editScreen">Edit Starter:
+        <div>Nickname:
             <input name="nickname" type="text" value="<%= pokemon.nickname %>">
-        </label>
-        <label>Level:
+        </div>
+        <div>Level:
             <input name="level" type="number" value="<%= pokemon.level %>">
-        </label>
-        <label>On Team: 
+        </div>
+        <div>On Team: 
             <input name="onTeam" type="checkbox" default= "checked"> 
-        </label>
+        </div>
     </label>
-    <button class="submit-button" type="submit">Accept Changes</button>
+    <button id="changes" class="submit-button" type="submit">Accept Changes</button>
 </form>
 <%- include('../partials/footer') %>
