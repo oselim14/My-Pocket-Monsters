@@ -11,7 +11,6 @@ module.exports = {
     edit,
     update,
     delete: deletePoke,
-
 }
 
 async function create(req, res) {
@@ -28,18 +27,6 @@ async function create(req, res) {
         return res.render('pokemon/new', { message: 'Invalid Name' });
     }
     res.redirect('/pokemon');
-
-
-
-    // const poke1 = new Pokemon(req.body);
-    // poke1.save(function(err) {
-    //     if (err) return res.render('home');
-    //     req.user.starterPokemon = poke1;
-    //     req.user.save(function(err){
-    //         console.log(req.user);
-    //         res.redirect(`/pokemon`);
-    //     });
-    // });
 }
 
 async function newPoke(req, res) {
@@ -48,8 +35,8 @@ async function newPoke(req, res) {
 
 function show(req, res) {
     Pokemon.findById(req.params.id, function (err, pokemon) {
-        res.render('pokemon/show', { pokemon })
-    })
+        res.render('pokemon/show', { pokemon });
+    });
 }
 
 function index(req, res) {
@@ -77,7 +64,7 @@ async function update(req, res) {
             return res.redirect(`/pokemon/${pokemon._id}/edit`);
         }
         res.redirect(`/pokemon/${pokemon._id}`);
-    })
+    });
 }
 
 function deletePoke(req, res) {

@@ -14,8 +14,8 @@ function addToPokemon(req, res) {
         pokemon.moves.push(req.body.moveId);
         pokemon.save(function (err) {
             res.redirect(`/pokemon/${pokemon._id}`);
-        })
-    })
+        });
+    });
 }
 
 async function create(req, res) {
@@ -39,5 +39,5 @@ async function deleteMove(req, res) {
     if (!move.user === req.user.id) return res.redirect(`/pokemon/${pokemon._id}`);
     move.remove();
     await pokemon.save();
-    res.redirect(`/pokemon/${pokemon._id}`)
+    res.redirect(`/pokemon/${pokemon._id}`);
 }

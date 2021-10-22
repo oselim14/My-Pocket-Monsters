@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const moveSchema = new Schema ({
     move: String,
-})
+});
 
 const pokeSchema = new Schema ({
     user: {

@@ -139,7 +139,6 @@ div {
   display: block;
 }
 
-
 .col {
   margin: 2vmin;
   background-color: rgba(213, 120, 120);
@@ -197,6 +196,7 @@ div {
   color: #f4cf74;
   text-shadow: 2px 2px 0 rgb(39	78	157);
 }
+
 .pokecardType > span{
   color: #f4cf74;
   text-shadow: 2px 2px 0 rgb(39	78	157);
@@ -210,9 +210,6 @@ img {
 .fas {
   margin: 15px;
 }
-
-
-
 
 #delete > button:hover{
   color: blue;
@@ -282,7 +279,6 @@ form >button:hover {
   margin-right: none;
   margin: 20px 0px 10px 0px;
 }
-
 
 li {
   display: flex;
