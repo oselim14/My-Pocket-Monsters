@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "my-pocket-monsters-executor",
+    "name": "my-pocket-monsters",
+    "region": "us-west-2"
+  },
+  "api": {
+    "id": "owx21kcqh8"
+  }
+}
