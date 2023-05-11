@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mypocketmonster-dev-200153-authRole",
+      "UnauthRoleArn": "arn:aws:iam::819628016814:role/amplify-mypocketmonster-dev-200153-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::819628016814:role/amplify-mypocketmonster-dev-200153-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-mypocketmonster-dev-200153-deployment",
+      "UnauthRoleName": "amplify-mypocketmonster-dev-200153-unauthRole",
+      "StackName": "amplify-mypocketmonster-dev-200153",
+      "StackId": "arn:aws:cloudformation:us-west-2:819628016814:stack/amplify-mypocketmonster-dev-200153/2fd69690-efa8-11ed-a7b1-0295827f407d",
+      "AmplifyAppId": "d1b7mf81rkxro4"
+    },
+    "categories": {
+      "function": {
+        "mypocketmonsterc0884e78": {}
+      }
+    }
+  }
+}

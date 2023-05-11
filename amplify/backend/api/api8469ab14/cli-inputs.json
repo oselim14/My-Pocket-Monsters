@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/": {
+      "name": "/",
+      "lambdaFunction": "mypocketmonsterc0884e78",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
